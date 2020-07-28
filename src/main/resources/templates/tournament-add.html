@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/estilos.css">
+    <title>Tournaments</title>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">eSports</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+            <a class="nav-item nav-link active" th:href="@{/index}">Home <span class="sr-only">(current)</span></a>
+            <a class="nav-item nav-link" th:href="@{/tournaments}">Tournaments</a>
+            <a class="nav-item nav-link" th:href="@{/teams}">Teams</a>
+        </div>
+    </div>
+</nav>
+
+<div class="box">
+    <h3>Add new tournament</h3>
+    <form action="#" method="post"
+          th:object="${tournament}"
+          th:action="@{/tournaments/save}">
+        <div>
+            <input type="text" name="" required="" th:field="*{name}" >
+            <label >Name Tournament</label>
+        </div>
+        <div>
+            <input type="text" name="" required="" th:field="*{country}" >
+            <label >Country</label>
+        </div>
+        <div>
+            <input type="text" name="" required="" th:field="*{location}" >
+            <label >Location</label>
+        </div>
+        <input type="submit" value="Add new tournament">
+    </form>
+</div>
+
+</body>
+</html>
